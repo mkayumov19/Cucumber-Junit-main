@@ -8,5 +8,6 @@ public class HelloJava {
         System.out.println("Hello java3");
         System.out.println("Hello java4");
         System.out.println("Hello java5");
+        System.out.println("Hello java6");
     }
 }
