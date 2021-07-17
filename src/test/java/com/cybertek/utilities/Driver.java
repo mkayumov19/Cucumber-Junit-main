@@ -13,7 +13,6 @@ public class Driver {
       Creating private constructor so its class' object is not reachable from outside
        */
     private Driver() {
-
     }
 
     /*

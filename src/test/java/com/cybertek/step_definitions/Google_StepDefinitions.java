@@ -10,33 +10,28 @@ import org.openqa.selenium.Keys;
 
 public class Google_StepDefinitions {
 
+    @Then("User should see title is Google")
+    public void user_should_see_title_is_google() {
+        String actualTitle = Driver.getDriver().getTitle();
+        String expectedTitle = "Google";
+        Assert.assertTrue(actualTitle.equals(expectedTitle));
+    }
+
     @Given("User is on Google home page")
     public void user_is_on_google_home_page() {
-
         Driver.getDriver().get("https://www.google.com");
     }
 
     @When("User searches for apple")
     public void user_searches_for_apple() {
-        GoogleSearchPage searchPage = new GoogleSearchPage();
-        searchPage.searchBar.sendKeys("apple" + Keys.ENTER);
-
+        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+        googleSearchPage.searchBar.sendKeys("apple" + Keys.ENTER);
     }
 
     @Then("User should see apple in the title")
     public void user_should_see_apple_in_the_title() {
         String actualTitle = Driver.getDriver().getTitle();
-        String expectedTitle = "apple";
-        Assert.assertTrue(actualTitle.contains(expectedTitle));
-
-    }
-
-
-    @Then("User should see title is Google")
-    public void userShouldSeeTitleIsGoogle() {
-    String expectedTitle = "Google";
-    String actualTitle = Driver.getDriver().getTitle();
-    Assert.assertTrue(actualTitle.equals(expectedTitle));
-
+        String expectedInTitle = "apple";
+        Assert.assertTrue(actualTitle.contains(expectedInTitle));
     }
 }

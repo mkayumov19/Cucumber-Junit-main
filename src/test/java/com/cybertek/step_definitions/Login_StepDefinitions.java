@@ -6,7 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Login_StepDefinitions {
-
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
         System.out.println("User is on the login page");
@@ -14,7 +13,8 @@ public class Login_StepDefinitions {
     @When("user enters librarian username")
     public void user_enters_librarian_username() {
         System.out.println("User enters librarian username");
-//        Assert.fail("INTENTIONAL FAILING. DELETE THIS LATER");
+
+        //Assert.fail("INTENTIONAL FAILING. DELETE THIS LATER");
     }
     @When("user enters librarian password")
     public void user_enters_librarian_password() {
