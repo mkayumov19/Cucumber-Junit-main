@@ -6,11 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        stepNotifications = true,
+//        monochrome = true,
         plugin = "html:target/cucumber-report.html",
         features = "src/test/resources/features",
         glue = "com/cybertek/step_definitions",
         dryRun = false,
-        tags = "@login"
+        tags = "@ScenarioOutline"
 
 )
 
