@@ -33,5 +33,5 @@ Feature: Wikipedia Search Functionality
       | Nikola Tesla    | Nikola Tesla       | Nikola Tesla    |
       | Conor McGregor  | Conor McGregor     | Conor McGregor  |
       | Chuck Norris    | Chuck Norris       | Chuck Norris    |
-      | Islam Karimov   | Islam Karimov      | Islam Karimov   |
+      | Putin           | Putin              | Putin           |
       | Donald Trump    | Donald Trump       | Donald Trump    |

@@ -18,7 +18,8 @@ public class Etsy_StepDefinitions {
 
     @Then("user should see Etsy title as expected")
     public void user_should_see_etsy_title_as_expected() {
-       String expectedTitle = "Etsy - Shop for handmade, vintage, custom, and unique gifts for everyone";
+       String expectedTitle = "Etsy - Shop for handmade, vintage, custom, and" +
+               " unique gifts for everyone";
        String actualTitle = Driver.getDriver().getTitle();
 //        Assert.assertTrue(actualTitle.equals(expectedTitle));
         Assert.assertEquals("Assertion failed",actualTitle,expectedTitle);

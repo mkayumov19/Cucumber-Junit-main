@@ -1,4 +1,4 @@
-@wip
+#@wip
   Feature: Try if download with selenium works
 
     Scenario: get into page find download link and try to click on that link
