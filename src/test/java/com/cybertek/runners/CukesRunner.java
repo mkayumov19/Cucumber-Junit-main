@@ -8,11 +8,14 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 //       monochrome = true,
         stepNotifications = true,
-        plugin = "html:target/cucumber-report.html",
+        plugin = {"html:target/cucumber-report.html",
+                  "json:target/cucumber.json",
+                  "rerun:target/rerun.txt"
+        },
         features = "src/test/resources/features",
         glue = "com/cybertek/step_definitions",
         dryRun = false,
-        tags = "@wip"
+        tags = "@ScenarioOutline"
 
 )
 
