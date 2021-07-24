@@ -2,6 +2,7 @@ package com.cybertek.step_definitions;
 
 import com.cybertek.pages.DropdownsPage;
 import com.cybertek.pages.LibraryLoginPage;
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -11,7 +12,6 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -54,13 +54,17 @@ public class DataTables_StepDefinitions {
     public void user_should_see_below_info_in_month_dropdown(List<String> expectedList) {
         Select monthDropdown = new Select(dropdownsPage.month);
         List<WebElement> actualMonthWebElement = monthDropdown.getOptions();
-        List<String> actualMonthAsString = new ArrayList<>();
-        for (WebElement each : actualMonthWebElement) {
-            actualMonthAsString.add(each.getText());
-        }
-        Assert.assertEquals(expectedList, actualMonthAsString);
-        System.out.println("Expected months = "+expectedList);
-        System.out.println("Actual months = "+actualMonthAsString);
+        Assert.assertEquals(expectedList, BrowserUtils.getElementsText(actualMonthWebElement));
+
+
+        //replacing all below lines with single line at 57.
+//        List<String> actualMonthAsString = new ArrayList<>();
+//        for (WebElement each : actualMonthWebElement) {
+//            actualMonthAsString.add(each.getText());
+//        }
+//        Assert.assertEquals(expectedList, actualMonthAsString);
+//        System.out.println("Expected months = "+expectedList);
+//        System.out.println("Actual months = "+actualMonthAsString);
     }
 
 }
