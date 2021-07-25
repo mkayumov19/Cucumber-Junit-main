@@ -1,5 +1,7 @@
+@regression
 Feature: Amazon Search and Cart features
-#  @wip
+
+  @amazonSearch
   Scenario: Amazon search and Cart features work as expected
     When User is on the Amazon Home Page
     And User search for hats for men

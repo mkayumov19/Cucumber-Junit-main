@@ -67,5 +67,7 @@ public class AmazonSearchStepDefs {
         Assert.assertTrue(amazon.subTotalText.getText().contains("1 item"));
         double priceForOne = Double.parseDouble(amazon.subTotalAmount.getText().substring(2));
         Assert.assertTrue(priceForTwo/priceForOne==2);
+
+
     }
 }
