@@ -24,7 +24,7 @@ public class AmazonPage {
     @FindBy(id = "twotabsearchtextbox")
     public WebElement searchBox;
 
-    @FindBy(xpath = "//span[@cel_widget_id='MAIN-SEARCH_RESULTS-1']//a[contains(@class,'a-text-normal')]")
+    @FindBy(xpath = "//span[@cel_widget_id='MAIN-SEARCH_RESULTS-2']//a[contains(@class,'a-text-normal')]")
     public WebElement firstHat;
 
     @FindBy(id = "price_inside_buybox")

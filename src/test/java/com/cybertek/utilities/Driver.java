@@ -4,7 +4,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
@@ -39,6 +42,17 @@ public class Driver {
             Depending on the browser type our switch statement will open specific type of driver
              */
                 switch (browserType) {
+                    case "remote-chrome":
+                        try{
+                            URL url = new URL("http://34.205.174.115:4444/wd/hub");
+                            DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                            desiredCapabilities.setBrowserName("chrome");
+                            driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                            driverPool.get().manage().window().maximize();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        break;
                     case "chrome":
                         WebDriverManager.chromedriver().setup();
                         driverPool.set(new ChromeDriver());
