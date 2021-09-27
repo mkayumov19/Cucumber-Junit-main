@@ -1,7 +1,7 @@
-package com.cybertek.step_definitions;
+package com.companyName.step_definitions;
 
-import com.cybertek.pages.DownloadPracticePage;
-import com.cybertek.utilities.Driver;
+import com.companyName.pages.DownloadPracticePage;
+import com.companyName.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

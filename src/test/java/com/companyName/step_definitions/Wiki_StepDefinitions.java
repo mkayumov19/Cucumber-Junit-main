@@ -1,8 +1,8 @@
-package com.cybertek.step_definitions;
+package com.companyName.step_definitions;
 
-import com.cybertek.pages.WikiSearchPage;
-import com.cybertek.utilities.ConfigurationReader;
-import com.cybertek.utilities.Driver;
+import com.companyName.pages.WikiSearchPage;
+import com.companyName.utilities.ConfigurationReader;
+import com.companyName.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

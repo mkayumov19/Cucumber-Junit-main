@@ -1,4 +1,4 @@
-package com.cybertek.utilities;
+package com.companyName.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;

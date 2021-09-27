@@ -1,4 +1,4 @@
-package com.cybertek.utilities;
+package com.companyName.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

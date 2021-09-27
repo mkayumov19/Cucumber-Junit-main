@@ -1,6 +1,6 @@
-package com.cybertek.utilities;
+package com.companyName.utilities;
 
-public class OfficeHoursUtils {
+public class OscarTest {
     public static double priceConverter (String price){
         String temp = "";
         for (int i = 0; i < price.length(); i++) {

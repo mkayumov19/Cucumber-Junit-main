@@ -1,9 +1,9 @@
-package com.cybertek.step_definitions;
+package com.companyName.step_definitions;
 
-import com.cybertek.pages.AmazonPage;
-import com.cybertek.utilities.BrowserUtils;
-import com.cybertek.utilities.Driver;
-import com.cybertek.utilities.OfficeHoursUtils;
+import com.companyName.pages.AmazonPage;
+import com.companyName.utilities.BrowserUtils;
+import com.companyName.utilities.Driver;
+import com.companyName.utilities.OscarTest;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -37,7 +37,7 @@ public class AmazonSearchStepDefs {
         amazon.firstHat.click();
         // get the single price for the hat
         String priceText = amazon.price.getText();
-        singlePriceforHat = OfficeHoursUtils.priceConverter(priceText);
+        singlePriceforHat = OscarTest.priceConverter(priceText);
         // Select the quatity as 2
         selectQuantity = new Select(amazon.quantityDropDown);
         selectQuantity.selectByVisibleText("2");

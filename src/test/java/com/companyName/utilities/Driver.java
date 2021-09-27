@@ -1,12 +1,15 @@
-package com.cybertek.utilities;
+package com.companyName.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -27,9 +30,9 @@ public class Driver {
     /*
    Creating re-usable utility method that will return same 'driver' instance everytime we call it.
     */
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if (driverPool.get() == null){
+        if (driverPool.get() == null) {
             synchronized (Driver.class) {
 
             /*
@@ -42,9 +45,20 @@ public class Driver {
             Depending on the browser type our switch statement will open specific type of driver
              */
                 switch (browserType) {
+                    case "chrome":
+                        WebDriverManager.chromedriver().setup();
+                        ChromeOptions chromeOptions = new ChromeOptions();
+                        chromeOptions.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+                        chromeOptions.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+                        driverPool.set(new ChromeDriver(chromeOptions));
+                        driverPool.get().manage().window().maximize();
+                        driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                        break;
+
                     case "remote-chrome":
-                        try{
-                            URL url = new URL("http://34.205.174.115:4444/wd/hub");
+                        try {
+                            String ipAddress = "3.83.90.189";
+                            URL url = new URL("http://" + ipAddress + ":4444/wd/hub");
                             DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                             desiredCapabilities.setBrowserName("chrome");
                             driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
@@ -53,12 +67,25 @@ public class Driver {
                             e.printStackTrace();
                         }
                         break;
-                    case "chrome":
+
+                    case "remoteChromeSSL":
+
                         WebDriverManager.chromedriver().setup();
-                        driverPool.set(new ChromeDriver());
-                        driverPool.get().manage().window().maximize();
-                        driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                        ChromeOptions chromeOptions1 = new ChromeOptions();
+                        chromeOptions1.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+                        chromeOptions1.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+                        try {
+                            String ipAddress = "3.83.90.189";
+                            URL url = new URL("http://" + ipAddress + ":4444/wd/hub");
+                            DesiredCapabilities desiredCapabilities = new DesiredCapabilities(chromeOptions1);
+                            desiredCapabilities.setBrowserName("chrome");
+                            driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                            driverPool.get().manage().window().maximize();
+                        } catch (MalformedURLException e) {
+                            e.printStackTrace();
+                        }
                         break;
+
                     case "firefox":
                         WebDriverManager.firefoxdriver().setup();
                         driverPool.set(new FirefoxDriver());
@@ -71,8 +98,8 @@ public class Driver {
         return driverPool.get();
     }
 
-    public static void closeDriver(){
-        if (driverPool.get() != null){
+    public static void closeDriver() {
+        if (driverPool.get() != null) {
             driverPool.get().quit();
             driverPool.remove();
         }
