@@ -11,7 +11,7 @@ public class DownloadPracticePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath= "//div[@class='md:w-1/2 bg-white p-8']//button)[1]")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[2]/div[2]/div/div[1]/p[1]/button")
     public WebElement downloadLink;
 
     @FindBy(xpath = "//a[@class='btn btn-green']")
