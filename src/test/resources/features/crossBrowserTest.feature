@@ -1,4 +1,6 @@
+
 @crossBrowserTest
+
 Feature: User should be able to see same information in different browsers
 
   Scenario: user opens google homepage and verifies title in chrome then firefox

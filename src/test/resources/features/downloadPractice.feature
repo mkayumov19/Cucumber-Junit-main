@@ -1,4 +1,6 @@
+
 @regression
+
 Feature: Try if download with selenium works
 
     @downloadPractice

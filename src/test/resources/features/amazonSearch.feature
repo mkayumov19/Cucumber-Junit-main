@@ -1,4 +1,6 @@
+
 @regression
+
 Feature: Amazon Search and Cart features
 
   @amazonSearch

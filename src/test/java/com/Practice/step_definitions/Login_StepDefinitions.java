@@ -1,4 +1,4 @@
-package com.companyName.step_definitions;
+package com.Practice.step_definitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

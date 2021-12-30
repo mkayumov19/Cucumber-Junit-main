@@ -1,9 +1,9 @@
-package com.companyName.step_definitions;
+package com.Practice.step_definitions;
 
-import com.companyName.pages.AmazonPage;
-import com.companyName.utilities.BrowserUtils;
-import com.companyName.utilities.Driver;
-import com.companyName.utilities.OscarTest;
+import com.Practice.pages.AmazonPage;
+import com.Practice.utilities.BrowserUtils;
+import com.Practice.utilities.Driver;
+import com.Practice.utilities.OscarTest;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class AmazonSearchStepDefs {
     AmazonPage amazon;
     WebDriverWait wait;
-    double singlePriceforHat;
+    double singlePriceForHat;
     Select selectQuantity;
     double priceForTwo;
 
@@ -37,7 +37,7 @@ public class AmazonSearchStepDefs {
         amazon.firstHat.click();
         // get the single price for the hat
         String priceText = amazon.price.getText();
-        singlePriceforHat = OscarTest.priceConverter(priceText);
+        singlePriceForHat = OscarTest.priceConverter(priceText);
         // Select the quatity as 2
         selectQuantity = new Select(amazon.quantityDropDown);
         selectQuantity.selectByVisibleText("2");
@@ -53,7 +53,7 @@ public class AmazonSearchStepDefs {
         Assert.assertTrue(amazon.subTotalText.getText().contains("2 items"));
         // the price from the cart
         priceForTwo = Double.parseDouble(amazon.subTotalAmount.getText().substring(2));
-        Assert.assertTrue(2*singlePriceforHat==priceForTwo);
+        Assert.assertTrue(2*singlePriceForHat==priceForTwo);
     }
 
     @When("User Reduce the quantity from {int} to {int} in Cart for the item selected")

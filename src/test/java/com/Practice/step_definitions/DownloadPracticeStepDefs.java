@@ -1,7 +1,7 @@
-package com.companyName.step_definitions;
+package com.Practice.step_definitions;
 
-import com.companyName.pages.DownloadPracticePage;
-import com.companyName.utilities.Driver;
+import com.Practice.pages.DownloadPracticePage;
+import com.Practice.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

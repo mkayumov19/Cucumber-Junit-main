@@ -1,4 +1,4 @@
-package com.companyName.utilities;
+package com.Practice.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

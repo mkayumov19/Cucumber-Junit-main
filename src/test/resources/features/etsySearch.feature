@@ -1,4 +1,6 @@
+
 @regression @etsySearch
+
 Feature: Etsy search feature
 
  @etsyTitle

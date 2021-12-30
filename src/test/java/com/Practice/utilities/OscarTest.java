@@ -1,4 +1,4 @@
-package com.companyName.utilities;
+package com.Practice.utilities;
 
 public class OscarTest {
     public static double priceConverter (String price){

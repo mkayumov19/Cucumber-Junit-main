@@ -1,4 +1,4 @@
-package com.companyName.utilities;
+package com.Practice.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

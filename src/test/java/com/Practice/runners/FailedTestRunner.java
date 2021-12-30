@@ -1,4 +1,4 @@
-package com.companyName.runners;
+package com.Practice.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         features = "@target/rerun.txt",
-        glue = "com/companyName/step_definitions"
+        glue = "com/Practice/step_definitions"
 
 )
 

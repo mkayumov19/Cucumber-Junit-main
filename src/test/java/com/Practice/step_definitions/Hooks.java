@@ -1,6 +1,6 @@
-package com.companyName.step_definitions;
+package com.Practice.step_definitions;
 
-import com.companyName.utilities.Driver;
+import com.Practice.utilities.Driver;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

@@ -1,6 +1,6 @@
-package com.companyName.pages;
+package com.Practice.pages;
 
-import com.companyName.utilities.Driver;
+import com.Practice.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

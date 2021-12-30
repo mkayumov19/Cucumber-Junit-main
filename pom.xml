@@ -59,7 +59,7 @@
         </dependency>
 
     </dependencies>
-                            <!-- PLUG INS  -->
+                            <!-- PLUGINS  -->
     <build>
         <plugins>
             <plugin>

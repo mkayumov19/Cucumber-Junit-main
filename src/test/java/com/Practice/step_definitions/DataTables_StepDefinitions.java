@@ -1,10 +1,10 @@
-package com.companyName.step_definitions;
+package com.Practice.step_definitions;
 
-import com.companyName.pages.DropdownsPage;
-import com.companyName.pages.LibraryLoginPage;
-import com.companyName.utilities.BrowserUtils;
-import com.companyName.utilities.ConfigurationReader;
-import com.companyName.utilities.Driver;
+import com.Practice.pages.DropdownsPage;
+import com.Practice.pages.LibraryLoginPage;
+import com.Practice.utilities.BrowserUtils;
+import com.Practice.utilities.ConfigurationReader;
+import com.Practice.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -57,7 +57,7 @@ public class DataTables_StepDefinitions {
         Assert.assertEquals(expectedList, BrowserUtils.getElementsText(actualMonthWebElement));
 
 
-        //replacing all below lines with single line at 57.
+//        replacing all below lines with single line at 57.
 //        List<String> actualMonthAsString = new ArrayList<>();
 //        for (WebElement each : actualMonthWebElement) {
 //            actualMonthAsString.add(each.getText());
